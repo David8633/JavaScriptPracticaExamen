@@ -72,15 +72,34 @@ console.log(esPrimo(8));
  2. Introducir el resto en una función.
  3. Que te devuelva si ese número es primo o no.
 */
-/*
-8. Calcular el promedio de una serie de números predefinidos.
-9. Buscar el número mayor en un array dado.
-10. Ordenar un array de números en orden ascendente.
-11. ORDENAR UN ARRAY DE PALABRAS por orden alfabético
-12.Ordenar un array de objetos por una propiedad específica (por
-ejemplo, edad)
-13. ORDENAR UN ARRAY DE OBJETOS POR MÚLTIPLES PROPIEDADES (P.e.
-apellido y luego nombre)
+
+//8. Calcular el promedio de una serie de números predefinidos.
+let numepredefinido = 9;
+let cantidaddeveces = 0 ;
+let i = 0;
+let array = [1,2,3,4,2,4,2,2];
+let suma = 0;
+while(i<=array.length){
+   suma+=array[i];
+}
+
+console.log(suma/cantidaddeveces);
+
+//9. Buscar el número mayor en un array dado.
+ numepredefinido = 9;
+ let nummayor = 0 ;
+ let y = 0;
+array = [1,2,3,4,2,4,2,2];
+let suma = 0;
+while(y<=array.length){
+  if(nummayor<array[y]){
+    nummayor= array[y]  }
+}
+//10. Ordenar un array de números en orden ascendente.
+//11. ORDENAR UN ARRAY DE PALABRAS por orden alfabético
+//12.Ordenar un array de objetos por una propiedad específica (por
+//ejemplo, edad)
+//13. ORDENAR UN ARRAY DE OBJETOS POR MÚLTIPLES PROPIEDADES (P.e. apellido y luego nombre)
 14. Calcular la potencia de un número dado.
 Módulo: Lenguajes de Marcas y Sistemas de gestión empresarial
 Profesora: Marta López Martos
