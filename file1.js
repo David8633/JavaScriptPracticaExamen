@@ -96,9 +96,38 @@ while(y<=array.length){
     nummayor= array[y]  }
 }
 //10. Ordenar un array de números en orden ascendente.
+let array = [8 ,4,75,784,57,48] ;
+
+console.log(array.sort);
 //11. ORDENAR UN ARRAY DE PALABRAS por orden alfabético
+let array1 = ['Aro', 'Magdalena','burrra', 'lobo', 'casa'];
+
+console.log(array1.sort);
 //12.Ordenar un array de objetos por una propiedad específica (por
 //ejemplo, edad)
+
+
+function persona(nombre, altura, peso, anio)  {
+    this.nombre = nombre,
+    this.altura = altura,
+    this.peso = peso,
+    this.anio = anio
+}
+
+function getEdad(){
+    return this.edad;
+}
+
+const persona1 = new persona("Pedro",2,3,45);
+const persona2 = new persona("Juan",2,3,9);
+const persona3 = new persona("Luisa",2,3,90);
+
+let array2 = [persona1,persona2,persona3] ;
+
+
+
+array2.sort((persona1,persona2)=> persona1.getEdad()-persona2.getEdad());
+
 //13. ORDENAR UN ARRAY DE OBJETOS POR MÚLTIPLES PROPIEDADES (P.e. apellido y luego nombre)
 14. Calcular la potencia de un número dado.
 Módulo: Lenguajes de Marcas y Sistemas de gestión empresarial
