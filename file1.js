@@ -112,12 +112,11 @@ function persona(nombre, altura, peso, anio)  {
     this.altura = altura,
     this.peso = peso,
     this.anio = anio
-}
 
-function getEdad(){
+    this.getEdad= function(){
     return this.edad;
+     }
 }
-
 const persona1 = new persona("Pedro",2,3,45);
 const persona2 = new persona("Juan",2,3,9);
 const persona3 = new persona("Luisa",2,3,90);
@@ -129,34 +128,46 @@ let array2 = [persona1,persona2,persona3] ;
 array2.sort((persona1,persona2)=> persona1.getEdad()-persona2.getEdad());
 
 //13. ORDENAR UN ARRAY DE OBJETOS POR MÚLTIPLES PROPIEDADES (P.e. apellido y luego nombre)
-14. Calcular la potencia de un número dado.
-Módulo: Lenguajes de Marcas y Sistemas de gestión empresarial
-Profesora: Marta López Martos
-EJERCICIOS CON CADENAS
-15. Revertir una cadena de caracteres
-16. Convertir una cadena en mayúsculas.
-17. Escribe una función llamada longitud que reciba como parámetro de
+///14. Calcular la potencia de un número dado.
+let numero = 2;
+
+
+//15. Revertir una cadena de caracteresç
+
+let cadena = 'dadfdfafdfdf';
+console.log(cadena.reverse());
+
+
+//16. Convertir una cadena en mayúsculas.
+console.log(cadena.toUpperCase);
+/*17. Escribe una función llamada longitud que reciba como parámetro de
 entrada una cadena de texto y devuelva el número de letras que tiene.
 Por ejemplo la siguiente llamada a la función:
-longitud("Ana"); Debería devolver 3.
-18. Escribe una función llamada devuelvePrimeraLetra que reciba como
-parámetro de entrada una cadena de texto y devuelva la primera letra.
-19. Escribe una función llamada devuelveUltimaLetra que reciba como
-parámetro de entrada una cadena de texto y devuelva la última letra.
-20. Escribe una función llamada devuelveEnesimaLetra que reciba como
+longitud("Ana"); Debería devolver 3.*/
+function longitud(cadena){
+    return cadena.length;
+}
+/*18. Escribe una función llamada devuelvePrimeraLetra que reciba como
+parámetro de entrada una cadena de texto y devuelva la primera letra.*/
+function devuelvePrimeraLetra(cadenaa){
+    return cadena.substring(0,1);
+}
+/*19. Escribe una función llamada devuelveUltimaLetra que reciba como
+parámetro de entrada una cadena de texto y devuelva la última letra.*/
+/*20. Escribe una función llamada devuelveEnesimaLetra que reciba como
 parámetro de entrada una cadena de texto y un número y devuelva la
-letra que ocupe la posición indicada por el número.
-21. Utilizando el método substring imprimir las letras que van desde la
-posición 3 a la 7 de la cadena «wonderful day», es decir “derf”.
-22. Hacer una función devuelveMasLarga que reciba como parámetro de
+letra que ocupe la posición indicada por el número.*/
+/*21. Utilizando el método substring imprimir las letras que van desde la
+posición 3 a la 7 de la cadena «wonderful day», es decir “derf”.*/
+/*22. Hacer una función devuelveMasLarga que reciba como parámetro de
 entrada dos cadenas de texto y devuelva la mayor. En caso de que ambas
 cadenas sean iguales, devolveremos la correspondiente al primer
-parámetro de la función.
-23. Hacer una función devuelveMasLarga2 que reciba como parámetro de
+parámetro de la función.*/
+/*23. Hacer una función devuelveMasLarga2 que reciba como parámetro de
 entrada tres cadenas de texto y devuelva la mayor. En caso de que al
 menos dos cadenas tengan igual longitud, devolveremos el texto Hay al
-menos dos cadenas iguales.
-24. Hacer una función generarNombre que reciba como parámetros de
+menos dos cadenas iguales.*/
+/*24. Hacer una función generarNombre que reciba como parámetros de
 entrada tres cadenas de texto. Si la longitud de alguna cadena es menor
 que cinco, la función debe devolver el texto ‘error’. Si ninguna cadena
 tiene menos de 5 letras, devolver una nueva palabra utilizando las tres
