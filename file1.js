@@ -207,7 +207,7 @@ function generarNombre(cadena,cadena2,cadena3){
         resultado = 'error'
     }
     else{
-        resultado= coger3letras(cadena) + coger3letras(cadena2) + coger3letras(cadena3);
+        resultado= coger3letras(cadena).concat(coger3letras(cadena2)).concat(coger3letras(cadena3));
     }
     return resultado;
 }
@@ -227,42 +227,123 @@ function generarNombre(cadena,cadena2,cadena3){
         resultado = 'error'
     }
     else{
-        resultado= lasletra(cadena) + lasletra(cadena2) + coger3lelasletratras(cadena3);
+        resultado= lasletra(cadena).concat(lasletra(cadena2)).concat(lasletra(cadena3));
     }
     return resultado;
 }
-
 /*
 26. Hacer una función generarNombre3 que reciba como parámetros de
 entrada tres cadenas de texto. Si la longitud de alguna cadena es menor
 que cinco, la función debe devolver el texto ‘error’. Si ninguna cadena
 tiene menos de 5 letras, devolver una nueva palabra utilizando las tres
-últimas letras de cada palabra.
+últimas letras de cada palabra.*/
+function ulyimaLetra(cadena){
+    return cadena.substring(cadena.length-3,cadena.length);
+}
+
+function generarNombre(cadena,cadena2,cadena3){
+    
+    if(cadena.length<5||cadena2.length<5||cadena3.length<5){
+        resultado = 'error'
+    }
+    else{
+        resultado= ulyimaLetra(cadena).concat(ulyimaLetra(cadena2)).concat(ulyimaLetra(cadena3));
+    }
+    return resultado;
+}
+
+
+/*
 27. Hacer una función tieneLetra que reciba como parámetro de entrada
 una cadena de texto y una letra y devuelva true si la letra esta
 presente en la palabra y false si no lo esta. Utilizar para ello el
-método indexOf.
+método indexOf.*/
+function tieneLetra(cadena, letra){
+    resultado = cadena.indexOf(letra);
+    if(resultado<0){
+        resultado = false;
+    }else{resultado = true;}
+
+    return resultado;
+}
+
+/*
 28. Realizar la evaluación del ejercicio anterior sin tener en cuenta
-si la letra pasada como parámetro está en mayúsculas o minúsculas
+si la letra pasada como parámetro está en mayúsculas o minúsculas*/
+
+console.log(tieneLetra('Madre mia', 'i'));
+/*
 29. Hacer una función crearPalabra que reciba como parámetro de entrada
 una letra y un número y genere una nueva palabra que tenga la letra
-introducida repetida tantas veces como indique el número.
+introducida repetida tantas veces como indique el número.*/
+
+function crearPalabra(letra,numero){
+    resultado = letra;
+    for(let m = 0; m<=numero; m++){
+        resultado.concat(letra);
+    }
+
+    return resultado;
+}
+
+/*
 30. Completar el ejercicio anterior haciendo que en la nueva palabra
-generada las letras estén en mayúsculas.
+generada las letras estén en mayúsculas.*/
+function crearPalabra(letra,numero){
+    resultado = letra;
+    for(let m = 0; m<=numero; m++){
+        resultado.concat(letra);
+    }
+
+    return resultado.toUpperCase();
+}
+/*
 31. Hacer una función addGuiones que reciba como parámetro de entrada
 una cadena texto y devuelva una nueva cadena que tendrá un guión medio
-detrás de cada letra. Utilizar para ello un bucle for.
+detrás de cada letra. Utilizar para ello un bucle for.*/
+function addGuiones(cadena) {
+    let resultado = '';
+    for (let i = 0; i < cadena.length; i++) {
+        resultado += cadena[i];
+        if (i < cadena.length - 1) {
+            resultado += '-';
+        }
+    }
+    return resultado;
+}
+
+
+/*
 32. Hacer una función contadorDeLetras que reciba como parámetro de
 entrada una cadena de texto y una letra y devuelva el número de veces
 que esa letra está presente en la palabra. Utilizar para ello un bucle
-for.
+for.*/
+function contadorDeLetras(cadena,letra){
+    let contador = 0;
+    for(let z = 0; z<cadena.length; z++){
+        if(cadena[z]==letra){
+            contador++;
+        }
+    }
+return contador;}
+
+
+/*
 33. Realizar la evolución del ejercicio anterior sin tener en cuenta si
 la letra pasada como parámetro está en mayúsculas o minúsculas Hacer
 una función contadorDeLetras2 que reciba como parámetro de entrada dos
 cadenas de texto y una letra y devuelva la cadena de texto en la que
 dicha letra está más presente. Utilizar para ello un bucle for. No
 tener en cuenta si la letra pasada como parámetro está en mayúsculas o
-minúsculas.
+minúsculas.*/
+function contadorDeLetras2(cadena,cadena2,letra){
+    if(contadorDeLetras(cadena,letra)>contadorDeLetras(cadena2,letra)){
+        resultado = cadena;
+    }else{
+        resultado = cadena2;
+    }
+return resultado;}
+/*
 34. Escribe una función llamada toCase que reciba como parámetro de
 entrada una cadena de texto y devuelva esa misma cadena de texto en
 minúsculas, un guión medio y de nuevo esa misma cadena de texto en
@@ -270,13 +351,23 @@ mayúsculas.
 Por ejemplo, la siguiente llamada a la función:
 toCase("Pablo");
 Debería devolver: pablo-PablO
-Módulo: Lenguajes de Marcas y Sistemas de gestión empresarial
-Profesora: Marta López Martos
+ */
+
+function toCase(cadena){
+    return (addGuiones(cadena.toLowerCase())).toUpperCase();
+}
+/*
 35. Escribe una función llamada shortcut que tome dos cadenas de texto
 y devuelva la inicial de cada una de las dos cadenas.
 Por ejemplo, la llamada a la función:
 shortcut('Amnesty', 'International');
-Debería devolver «AI».
+Debería devolver «AI». */
+
+function shortcut(cadena,cadena2){
+    return cadena.charAt(0).concat(cadena2.charAt(0));
+}
+
+/*
 36. Escribe una función llamada firstChar, que devuelva la primera
 letra que no sea un espacio cuando una cadena de texto es pasada.
 Para ello, podemos eliminar los espacios en blanco que pudiera haber al
@@ -285,7 +376,12 @@ Si no estás muy seguro/a de cómo funciona este método, ¡consúltalo en
 internet, que no es tan difícil!.
 Por ejemplo, la llamada a la función:
 firstChar(" Rosa Parks ");
-Debería devolver R.
+Debería devolver R.*/
+function firstChar(cadena){
+    return (cadena.trim()).charAt(0);
+}
+
+/*
 37. Escribe una función llamada indexOfIgnoreCase que reciba dos
 cadenas de texto y devuelva la posición de la primera ocurrencia de la
 segunda cadena de texto en la primera. La función no debería tener en
@@ -294,7 +390,11 @@ Por ejemplo:
 indexOfIgnoreCase("bit","it");
 y
 indexOfIgnoreCase("bit","IT");
-deberían devolver 1
+deberían devolver 1 */
+
+
+
+/*
 38. Escribe una función llamada firstWord que reciba como parámetro de
 entrada una cadena de texto y devuelva la primera palabra de esa
 cadena. La primera palabra de la cadena serán todos los caracteres que
@@ -302,3 +402,7 @@ hay hasta el primer espacio.
 Por ejemplo:
 firstWord("see and stop");
 Debería devolver «see».*/
+
+function firstWord(cadena){
+    return (cadena.split(' '))[0];
+}
