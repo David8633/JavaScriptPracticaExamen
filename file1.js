@@ -216,9 +216,23 @@ function generarNombre(cadena,cadena2,cadena3){
 entrada tres cadenas de texto. Si la longitud de alguna cadena es menor
 que cinco, la función debe devolver el texto ‘error’. Si ninguna cadena
 tiene menos de 5 letras, devolver una nueva palabra utilizando la
-última letra de cada palabra.
-Módulo: Lenguajes de Marcas y Sistemas de gestión empresarial
-Profesora: Marta López Martos
+última letra de cada palabra.*/
+function lasletra(cadena){
+    return cadena.substring(cadena.length -1);
+}
+
+function generarNombre(cadena,cadena2,cadena3){
+    
+    if(cadena.length<5||cadena2.length<5||cadena3.length<5){
+        resultado = 'error'
+    }
+    else{
+        resultado= lasletra(cadena) + lasletra(cadena2) + coger3lelasletratras(cadena3);
+    }
+    return resultado;
+}
+
+/*
 26. Hacer una función generarNombre3 que reciba como parámetros de
 entrada tres cadenas de texto. Si la longitud de alguna cadena es menor
 que cinco, la función debe devolver el texto ‘error’. Si ninguna cadena
