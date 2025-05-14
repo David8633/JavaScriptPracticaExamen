@@ -77,8 +77,8 @@ console.log(esPrimo(8));
 let numepredefinido = 9;
 let cantidaddeveces = 0 ;
 let i = 0;
-let array = [1,2,3,4,2,4,2,2];
-let suma = 0;
+let array3 = [1,2,3,4,2,4,2,2];
+let sum = 0;
 while(i<=array.length){
    suma+=array[i];
 }
@@ -90,7 +90,7 @@ console.log(suma/cantidaddeveces);
  let nummayor = 0 ;
  let y = 0;
 array = [1,2,3,4,2,4,2,2];
-let suma = 0;
+
 while(y<=array.length){
   if(nummayor<array[y]){
     nummayor= array[y]  }
@@ -154,24 +154,64 @@ function devuelvePrimeraLetra(cadenaa){
 }
 /*19. Escribe una función llamada devuelveUltimaLetra que reciba como
 parámetro de entrada una cadena de texto y devuelva la última letra.*/
+function devuelveUltimaLetra(cadena){
+    return cadena.substring(cadena.length -1);
+}
 /*20. Escribe una función llamada devuelveEnesimaLetra que reciba como
 parámetro de entrada una cadena de texto y un número y devuelva la
 letra que ocupe la posición indicada por el número.*/
+function devuelveEnesimaLetra(cadena, n){
+    return cadena.charAt(n);
+}
 /*21. Utilizando el método substring imprimir las letras que van desde la
 posición 3 a la 7 de la cadena «wonderful day», es decir “derf”.*/
+let palabra = "wonderful" ;
+palabra.substring(3,7);
 /*22. Hacer una función devuelveMasLarga que reciba como parámetro de
 entrada dos cadenas de texto y devuelva la mayor. En caso de que ambas
 cadenas sean iguales, devolveremos la correspondiente al primer
 parámetro de la función.*/
+function devuelveMasLarga(cadena, cadena2){
+    let resul ;
+    if(cadena.length>cadena2.length){
+        result = cadena;
+    }
+    else{
+        resul = cadena2;
+    }
+return resul;    
+}
 /*23. Hacer una función devuelveMasLarga2 que reciba como parámetro de
 entrada tres cadenas de texto y devuelva la mayor. En caso de que al
 menos dos cadenas tengan igual longitud, devolveremos el texto Hay al
 menos dos cadenas iguales.*/
+function devuelveMasLarga2(cadena,cadena2,cadena3){
+    let result;
+    if(cadena==cadena2 || cadena==cadena3){
+        result = "Hay dos cadenaas iguales";
+    }
+
+}
 /*24. Hacer una función generarNombre que reciba como parámetros de
 entrada tres cadenas de texto. Si la longitud de alguna cadena es menor
 que cinco, la función debe devolver el texto ‘error’. Si ninguna cadena
 tiene menos de 5 letras, devolver una nueva palabra utilizando las tres
-primeras letras de cada palabra.
+primeras letras de cada palabra.*/
+function coger3letras(cadena){
+    return cadena.substring(0,4);
+}
+
+function generarNombre(cadena,cadena2,cadena3){
+    
+    if(cadena.length<5||cadena2.length<5||cadena3.length<5){
+        resultado = 'error'
+    }
+    else{
+        resultado= coger3letras(cadena) + coger3letras(cadena2) + coger3letras(cadena3);
+    }
+    return resultado;
+}
+/*
 25. Hacer una función generarNombre2 que reciba como parámetros de
 entrada tres cadenas de texto. Si la longitud de alguna cadena es menor
 que cinco, la función debe devolver el texto ‘error’. Si ninguna cadena
